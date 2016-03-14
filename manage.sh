@@ -18,6 +18,7 @@ IP=`docker-machine env docker | grep "DOCKER_HOST" | cut -d "/" -f3 | cut -d ":"
 
 BUILD_CMD="docker build -t=$IMAGE ."
 RUN_CMD="docker run -d -p 55522:22 -p 55580:80 $IMAGE"
+BASH_CMD="docker run -it $IMAGE bash"
 VERSION_CMD="docker run $IMAGE java -version"
 SSH_CMD="ssh root@$IP -p 55522 -i ~/.ssh/id_rsa_docker"
 
@@ -50,7 +51,10 @@ case "$1" in
                 	echo "Image '$IMAGE' is not running"
                 fi
                 ;;
-
+	
+		bash)
+                $BASH_CMD
+                ;;
         status)
                 if is_running; then
                 	echo "Image '$IMAGE' is running under Id: '$ID'"
