@@ -1,5 +1,5 @@
 # docker-oracle-jdk8
-Dockerfile project for building a mix container with oracle jdk 8 instead of Open jdk. This image is based on [fxmartin/docker-sshd-nginx](https://github.com/fxmartin/docker-sshd-nginx).
+Dockerfile project for building a container with oracle jdk 8 instead of Open jdk. This image is based on [fxmartin/docker-sshd-nginx](https://github.com/fxmartin/docker-sshd-nginx).
 
 ## About
 
