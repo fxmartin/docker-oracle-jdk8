@@ -14,7 +14,7 @@ VERSION=1.00
 IMAGE="fxmartin/docker-oracle-jdk8"
 
 ID=`docker ps | grep "$IMAGE" | head -n1 | cut -d " " -f1`
-IP=`docker-machine env docker | grep "DOCKER_HOST" | cut -d "/" -f3 | cut -d ":" -f1`
+IP=`docker-machine env default | grep "DOCKER_HOST" | cut -d "/" -f3 | cut -d ":" -f1`
 
 BUILD_CMD="docker build -t=$IMAGE ."
 RUN_CMD="docker run -d -p 55522:22 -p 55580:80 $IMAGE"
